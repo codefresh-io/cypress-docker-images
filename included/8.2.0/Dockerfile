@@ -8,7 +8,7 @@
 FROM cypress/browsers:node14.17.0-chrome91-ff89
 
 # Update the dependencies to get the latest and greatest (and safest!) packages.
-RUN apt update && apt upgrade -y
+RUN apt update && apt upgrade -y && apt-get install curl -y
 
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
@@ -65,5 +65,8 @@ RUN echo  " node version:    $(node -v) \n" \
   "user:            $(whoami) \n" \
   "chrome:          $(google-chrome --version || true) \n" \
   "firefox:         $(firefox --version || true) \n"
+
+# install k3d
+RUN curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash && k3d version
 
 ENTRYPOINT ["cypress", "run"]
