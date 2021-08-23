@@ -8,7 +8,8 @@
 FROM cypress/browsers:node14.17.0-chrome91-ff89
 
 # Update the dependencies to get the latest and greatest (and safest!) packages.
-RUN apt update && apt upgrade -y && apt-get install apt-transport-https ca-certificates curl -y
+RUN apt update && apt upgrade -y && apt-get install apt-transport-https ca-certificates gnupg lsb-release -y
+
 
 
 
@@ -76,6 +77,11 @@ RUN curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packa
 RUN echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
 RUN apt-get update && apt-get install -y kubectl
 RUN kubectl version --client
+
+# install docker
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+RUN apt-get update && apt-get install docker-ce docker-ce-cli -y
 
 
 ENTRYPOINT ["cypress", "run"]
