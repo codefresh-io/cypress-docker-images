@@ -5,7 +5,7 @@
 # build this image with command
 #   docker build -t cypress/included:10.1.0 .
 #
-FROM cypress/browsers:node16.3.2-slim-chrome100-ff99-edge
+FROM cypress/browsers:node16.3.2-slim-chrome100-ff98-edge
 
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
