@@ -3,9 +3,9 @@
 # https://on.cypress.io/docker and https://on.cypress.io/ci
 #
 # build it with command
-#   docker build -t cypress/base:16.5.1 .
+#   docker build -t cypress/base:16.15.1 .
 #
-FROM node:16.5.1-buster
+FROM node:16.15.1-buster
 
 RUN apt-get update && \
   apt-get install --no-install-recommends -y \
