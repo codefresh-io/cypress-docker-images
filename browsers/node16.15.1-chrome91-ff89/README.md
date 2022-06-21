@@ -1,4 +1,4 @@
-# cypress/browsers:node16.13.2-chrome91-ff89
+# cypress/browsers:node16.15.1-chrome91-ff89
 
 A complete image with all operating system dependencies for Cypress, Chrome
 91 and Firefox 89 browsers.

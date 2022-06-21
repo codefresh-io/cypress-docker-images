@@ -1,4 +1,4 @@
-FROM gcr.io/codefresh-inc/cypress/base:16.13.2
+FROM gcr.io/codefresh-inc/cypress/base:16.15.1
 
 USER root
 
