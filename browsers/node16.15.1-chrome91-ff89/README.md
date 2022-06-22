@@ -18,3 +18,4 @@ whoami:          root
 
 **Note:** this image uses the `root` user. You might want to switch to non-root
 user like `node` when running this container for security.
+
