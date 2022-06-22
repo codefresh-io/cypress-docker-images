@@ -16,3 +16,4 @@ $ docker run -it -v $PWD:/e2e -w /e2e cypress/included:8.7.0-updated
 ```
 
 [blog post url]: https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command/
+
