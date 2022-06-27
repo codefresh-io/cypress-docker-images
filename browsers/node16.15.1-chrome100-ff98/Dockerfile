@@ -6,7 +6,7 @@
 #   docker build -t cypress/browsers:node16.15.1-chrome100-ff98 .
 #
 #
-FROM cypress/base:16.15.1
+FROM gcr.io/codefresh-inc/cypress/base:16.15.1
 
 USER root
 
