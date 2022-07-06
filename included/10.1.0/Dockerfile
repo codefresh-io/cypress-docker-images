@@ -62,7 +62,7 @@ RUN echo "whoami: $(whoami)" \
 
 
 # install k3d
-RUN curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash && k3d version
+RUN curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.2.2 bash 
 
 # install kubectl
 RUN curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
